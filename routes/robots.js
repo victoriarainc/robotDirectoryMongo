@@ -10,4 +10,12 @@ routes.get('/', (req, res) => {
   });
 });
 
+routes.get('/:userName', (req, res) => {
+  let col = db.get().collection('robots');
+
+  col.findOne({username: req.params.userName}, (err, robot) => {
+    res.render('goof', robot);
+  });
+});
+
 module.exports = routes;

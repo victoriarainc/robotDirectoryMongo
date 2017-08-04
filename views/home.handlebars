@@ -13,11 +13,10 @@
       <div id="user">
         <a href="/{{username}}"><img src={{avatar}}></a>
         <h1>{{name}}</h1>
-        
-        {{#job}}
-        <p id="info">{{job}}, {{company}}</p>
-        {{/job}}
 
+        {{#if job}}
+        <p id="info">{{job}}, {{company}}</p>
+        {{/if}}
         {{^job}}
         <p id="availability">Available for hire</p>
         {{/job}}
